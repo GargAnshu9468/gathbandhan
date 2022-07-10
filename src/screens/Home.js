@@ -1,7 +1,15 @@
 import React from 'react';
+import CustomAlert from '../components/CustomAlert';
+import LoadResources from '../components/LoadResources';
 import { SafeAreaView, StyleSheet, ImageBackground, Text, TouchableOpacity } from 'react-native';
 
 export default function Home({ navigation }) {
+    const appIsReady = LoadResources();
+
+    if (!appIsReady) {
+        return null;
+    }
+
     return (
         <SafeAreaView style={styles.mainScreen}>
             <ImageBackground
@@ -29,7 +37,10 @@ export default function Home({ navigation }) {
                 <TouchableOpacity
                     style={styles.signInButton}
                     onPress={() => {
-                        console.log('Pressed!');
+                        CustomAlert({
+                            'title': 'Success',
+                            'message': 'You are now signed in.'
+                        })
                     }}
                 >
 
@@ -39,7 +50,10 @@ export default function Home({ navigation }) {
                 <TouchableOpacity
                     style={styles.registerButton}
                     onPress={() => {
-                        console.log('Pressed!');
+                        CustomAlert({
+                            'title': 'Success',
+                            'message': 'You are now registered.'
+                        })
                     }}
                 >
 
@@ -78,18 +92,17 @@ const styles = StyleSheet.create({
     },
 
     quote: {
-        marginTop: '330px',
-        marginLeft: '30px',
+        marginTop: '80%',
+        marginLeft: '10%',
     },
 
     line: {
         fontSize: 40,
-        fontFamily: 'Rockwell',
         color: '#ffffff',
     },
 
     buttons: {
-        marginTop: '30px',
+        marginTop: '20%',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -106,12 +119,12 @@ const styles = StyleSheet.create({
 
     signInText: {
         fontSize: 20,
-        fontWeight: 300,
+        fontWeight: '300',
         color: '#ffffff',
     },
 
     registerButton: {
-        marginTop: '30px',
+        marginTop: '10%',
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'center',
@@ -123,12 +136,12 @@ const styles = StyleSheet.create({
 
     registerText: {
         fontSize: 20,
-        fontWeight: 300,
+        fontWeight: '300',
         color: '#7dbab0'
     },
 
     brandName: {
-        marginTop: '50px',
+        marginTop: '15%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
@@ -136,13 +149,13 @@ const styles = StyleSheet.create({
 
     gath: {
         fontSize: 40,
-        fontFamily: 'Mistral',
+        fontFamily: 'AlexBrush_400Regular',
         color: '#f27072',
     },
 
     bandhan: {
         fontSize: 40,
-        fontFamily: 'Mistral',
+        fontFamily: 'AlexBrush_400Regular',
         color: '#7dbab0',
     },
 });
