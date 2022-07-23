@@ -1,5 +1,4 @@
 import React from 'react';
-import CustomAlert from '../components/CustomAlert';
 import LoadResources from '../components/LoadResources';
 import { SafeAreaView, StyleSheet, ImageBackground, Text, TouchableOpacity } from 'react-native';
 
@@ -37,12 +36,7 @@ export default function Home({ navigation }) {
                 <TouchableOpacity
                     style={styles.signInButton}
                     onPress={() => {
-                        CustomAlert({
-                            'title': 'Success',
-                            'message': 'You are now signed in.',
-                            'navigation': navigation,
-                            'destination': 'SignIn'
-                        })
+                        navigation.navigate('SignIn');
                     }}
                 >
 
@@ -52,12 +46,7 @@ export default function Home({ navigation }) {
                 <TouchableOpacity
                     style={styles.registerButton}
                     onPress={() => {
-                        CustomAlert({
-                            'title': 'Success',
-                            'message': 'You are now registered.',
-                            'navigation': navigation,
-                            'destination': 'Register'
-                        })
+                        navigation.navigate('Register');
                     }}
                 >
 

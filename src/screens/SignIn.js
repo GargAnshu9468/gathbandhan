@@ -61,7 +61,12 @@ export default function SignIn({ navigation }) {
             <TouchableOpacity
                 style={styles.signInButton}
                 onPress={() => {
-                    console.log('Pressed!');
+                    CustomAlert({
+                        'title': 'Success',
+                        'message': 'You are now signed in.',
+                        'navigation': navigation,
+                        'destination': 'SignIn'
+                    })
                 }}
             >
 

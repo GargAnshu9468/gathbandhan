@@ -1,7 +1,6 @@
 import React from 'react';
-import CustomAlert from '../components/CustomAlert';
 import LoadResources from '../components/LoadResources';
-import { SafeAreaView, StyleSheet, ImageBackground, Text, TouchableOpacity } from 'react-native';
+import { SafeAreaView, StyleSheet, ImageBackground } from 'react-native';
 
 export default function Register({ navigation }) {
     const appIsReady = LoadResources();
