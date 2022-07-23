@@ -39,7 +39,9 @@ export default function Home({ navigation }) {
                     onPress={() => {
                         CustomAlert({
                             'title': 'Success',
-                            'message': 'You are now signed in.'
+                            'message': 'You are now signed in.',
+                            'navigation': navigation,
+                            'destination': 'SignIn'
                         })
                     }}
                 >
@@ -52,7 +54,9 @@ export default function Home({ navigation }) {
                     onPress={() => {
                         CustomAlert({
                             'title': 'Success',
-                            'message': 'You are now registered.'
+                            'message': 'You are now registered.',
+                            'navigation': navigation,
+                            'destination': 'Register'
                         })
                     }}
                 >

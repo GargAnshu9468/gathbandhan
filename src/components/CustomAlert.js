@@ -1,6 +1,6 @@
 import { Alert } from "react-native";
 
-export default function CustomAlert({title, message}) {
+export default function CustomAlert({title, message, navigation, destination}) {
     return (
         Alert.alert(
             title,
@@ -13,7 +13,7 @@ export default function CustomAlert({title, message}) {
                 },
                 {
                     text: "OK",
-                    onPress: () => console.log("OK Pressed")
+                    onPress: () => navigation.navigate(destination)
                 }
             ]
         )
